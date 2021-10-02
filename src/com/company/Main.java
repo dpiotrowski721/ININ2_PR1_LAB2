@@ -43,10 +43,10 @@ public class Main {
         car.producer = "Opel";
 
 
-        Human me = new Human("Adrian","Puchacki",20,5000d, dog, car);
+        Human me = new Human("Adrian", "Puchacki", 20, 5000d, dog, car);
 
         System.out.println("I have a " + me.pet.species);
-        System.out.println("I all it "+ me.pet.name);
+        System.out.println("I all it " + me.pet.name);
         System.out.println("I have " + me.car.producer + " " + me.car.model + ". My car has " + me.car.color + " color");
 
 
@@ -65,7 +65,8 @@ public class Main {
 
         System.out.println("------------------------------------------");
 
-
+        me.setSalary(20000d);
+        System.out.println(me.getSalary());
 
     }
 }
