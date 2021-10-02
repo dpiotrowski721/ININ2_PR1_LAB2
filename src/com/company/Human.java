@@ -9,16 +9,16 @@ public class Human {
     Integer age;
     private Double salary;
     Animal pet;
-    Car car;
+    private Car car;
 
 
-    Human(String firstName, String lastName, Integer age, Double salary, Animal pet, Car car) {
+    Human(String firstName, String lastName, Integer age, Double salary, Animal pet /*, Car car*/) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.salary = salary;
         this.pet = pet;
-        this.car = car;
+        //this.car = car;
     }
 
     void setSalary(Double salary) {
@@ -41,5 +41,31 @@ public class Human {
         System.out.println("Salary on day: " + LocalDate.now() + " equals: " + this.salary + " zł");
         return this.salary;
     }
+
+
+
+    Car getCar()
+    {
+        return this.car;
+    }
+
+    void setCar(Car carToCheck)
+    {
+        if(this.salary > carToCheck.value)
+        {
+            System.out.println("You bought the car with cash");
+            this.car = carToCheck;
+        }
+        else if(this.salary > carToCheck.value/12)
+        {
+            System.out.println("You bought the car on credit");
+            this.car = carToCheck;
+        }
+        else if(this.salary <= carToCheck.value)
+        {
+            System.out.println("Enroll in studies, change your job or ask for a raise");
+        }
+    }
+
 
 }

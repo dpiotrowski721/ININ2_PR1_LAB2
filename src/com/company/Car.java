@@ -5,5 +5,6 @@ public class Car {
     String producer;
     String model;
     String color;
+    Double value;
 
 }

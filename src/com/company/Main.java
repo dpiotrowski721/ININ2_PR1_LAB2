@@ -37,17 +37,18 @@ public class Main {
         System.out.println("If I'll be human I'll be " + dog.getHumanAge() + " years old");
 
 
-        Car car = new Car();
+       /* Car car = new Car();
         car.color = "red";
         car.model = "Astra";
         car.producer = "Opel";
+        car.value = 2000.0; */
 
 
-        Human me = new Human("Adrian", "Puchacki", 20, 5000d, dog, car);
+        Human me = new Human("Adrian", "Puchacki", 20, 5000d, dog);
 
         System.out.println("I have a " + me.pet.species);
         System.out.println("I all it " + me.pet.name);
-        System.out.println("I have " + me.car.producer + " " + me.car.model + ". My car has " + me.car.color + " color");
+        //System.out.println("I have " + me.car.producer + " " + me.car.model + ". My car has " + me.car.color + " color");
 
 
         System.out.println("------------------------------------------");
@@ -67,6 +68,30 @@ public class Main {
 
         me.setSalary(20000d);
         System.out.println(me.getSalary());
+
+
+        System.out.println("------------------------------------------");
+
+        Car car1 = new Car();
+        car1.value = 2000000d;
+        car1.producer = "Opel";
+        car1.model = "Astra";
+        car1.color = "Red";
+
+
+        me.setCar(car1);
+
+        if (me.getCar() != null) {
+            System.out.println(me.getCar().model);
+        } else {
+            System.out.println("Sorry, You don't have a car!");
+        }
+
+        try {
+            System.out.println(me.getCar().model);
+        } catch (Exception e) {
+            System.out.println("Sorry, You don't have a car!");
+        }
 
     }
 }
